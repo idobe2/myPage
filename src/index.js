@@ -1,9 +1,10 @@
 import express from "express";
-import path from "path";
+import path from 'path';
 // const express = require('express');
 // const path = require("path");
 const port = process.env.port || 3000;
 const app = express();
+
 
 app.get('/example/class',
     (req, res) => {
