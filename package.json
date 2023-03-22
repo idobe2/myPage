@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "description": "Welcome to my HTML page!",
   "main": "src/index.js",
-  "type": "Commonjs",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "test": "mocha tests/*.spec.js --color",
+    "lint": "eslint src/* --color"
   },
   "repository": {
     "type": "git",
