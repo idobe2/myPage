@@ -21,6 +21,9 @@ jobs:
       - run:
           name: run linter
           command: npm run lint
+      - run:
+          name: CD - Deploy the service
+          command: curl "https://api.render.com/deploy/srv-cgdmjpseoogo8r3mic00?key=oOPR0fApEtI"
 
 workflows:
   example-workflow:

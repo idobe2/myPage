@@ -11,7 +11,7 @@ app.get('/example/class', (req, res) => {
 
 app.get('/example', (req, res) => {
     console.log('New request arrived');
-    res.sendFile(path.resolve('index.html'));
+    res.sendFile( path.resolve('index.html') );
 });
 
 app.listen(port, () => {
