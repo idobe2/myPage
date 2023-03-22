@@ -22,3 +22,7 @@ npx mocha tests/*.spec.js --color
 
 intall eslint:
 npm i eslint --save-dev
+
+self-notes:
+//res.sendFile(path.join(__dirname, '/index.html'));
+// res.send('<h1><Hi from server</h1>');
