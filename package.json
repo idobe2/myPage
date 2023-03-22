@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "test": "mocha tests/*.spec.js --color",
-    "lint": "eslint src/* --color"
+    "lint": "eslint src/* --color",
+    "test": "mocha tests/*.spec.js --color"
   },
   "repository": {
     "type": "git",
