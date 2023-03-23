@@ -15,6 +15,15 @@ app.get('/login.html', (req, res) => {
     res.sendFile(path.resolve('login.html'));
 });
 
+app.get('/login.css', (req, res) => {
+    res.sendFile(path.resolve('login.css'));
+});
+
+app.get('/index.html', (req, res) => {
+    console.log('New request arrived');
+    res.sendFile(path.resolve('index.html'));
+});
+
 app.get('/about.html', (req, res) => {
     res.sendFile(path.resolve('about.html'));
 });

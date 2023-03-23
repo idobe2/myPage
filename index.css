@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    
+}
+
+.main_div
+{
+    width: 70%;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.main_h
+{
+    background: rgb(214, 211, 211);
+    text-align: center;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    
+}
+
+.about
+{   
+    margin-left: 40px;
+}
+
+.login{
+    margin-left: 40px; 
+}
