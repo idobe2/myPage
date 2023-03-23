@@ -4,12 +4,12 @@ import path from 'path';
 const port = process.env.port || 3000;
 const app = express();
 
-app.get('/example/class', (req, res) => {
+app.get('/', (req, res) => {
     console.log('New request arrived from class');
-    res.send('<h1>Hi from class</h1>');
+    res.send("<h1>Hi from class</h1>");
 });
 
-app.get('/example', (req, res) => {
+app.get('/', (req, res) => {
     console.log('New request arrived');
     res.sendFile(path.resolve('index.html'));
 });
