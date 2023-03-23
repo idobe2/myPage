@@ -15,7 +15,7 @@ app.get('/login.html', (req, res) => {
     res.sendFile(path.resolve('login.html'));
 });
 
-app.get('/', (req, res) => {
+app.get('/about.html', (req, res) => {
     res.sendFile(path.resolve('about.html'));
 });
 
