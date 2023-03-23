@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-
 const port = process.env.port || 3000;
 const app = express();
 
@@ -11,7 +10,7 @@ const app = express();
 
 app.get('/', (req, res) => {
     console.log('New request arrived');
-    res.sendFile(path.resolve(__dirname, 'src', 'index.html'));
+    res.sendFile(path.resolve('index.html'));
 });
 
 
