@@ -15,11 +15,9 @@ app.get('/login.html', (req, res) => {
     res.sendFile(path.resolve('login.html'));
 });
 
-app.get('/about.html', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.resolve('about.html'));
 });
-
-
 
 app.listen(port, () => {
     console.log(`Server is running at ${port}`);
