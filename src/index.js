@@ -11,10 +11,14 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve('index.html'));
 });
 
-app.get('/Login', (req, res) => {
-    console.log('Redirecting to login page');
+app.get('/login.html', (req, res) => {
     res.sendFile(path.resolve('login.html'));
 });
+
+app.get('/about.html', (req, res) => {
+    res.sendFile(path.resolve('about.html'));
+});
+
 
 
 app.listen(port, () => {
