@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.sendFile(path.resolve('index.html'));
 });
 
+app.get('/index.css', (req, res) => {
+    res.sendFile(path.resolve('index.css'));
+});
+
 app.get('/login.html', (req, res) => {
     res.sendFile(path.resolve('login.html'));
 });
