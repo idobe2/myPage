@@ -32,6 +32,18 @@ app.get('/about.html', (req, res) => {
     res.sendFile(path.resolve('about.html'));
 });
 
+app.get('/about.css', (req, res) => {
+    res.sendFile(path.resolve('about.css'));
+});
+
+app.get('/signup.html', (req, res) => {
+    res.sendFile(path.resolve('signup.html'));
+});
+
+app.get('/signup.css', (req, res) => {
+    res.sendFile(path.resolve('signup.css'));
+});
+
 app.listen(port, () => {
     console.log(`Server is running at ${port}`);
 });

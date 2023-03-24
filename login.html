@@ -13,7 +13,7 @@
     <div class="home">
         <a style="color: black" href="index.html">home</a>
     </div>
-    <form class="signin" action="index.html">
+    <form class="signin" action="index.html" id = "signin-form">
         <br>
         <br>
         <label>Enter your email: </label>
@@ -21,12 +21,42 @@
         <br>
         <br>
         <label>Enter password:</label>
-        <input class="password" type="password" password="txt_password" required>
+        <input class="password" type="password" name="password" required>
         <br>
         <br>
-        <button>Login</button>
+        <button type = "submit">Login</button>
 
     </form>
+
+    <script>
+        const emailInput = document.querySelector('input[name="signin"]');
+        const passwordInput = document.querySelector('input[name="password"]');
+        const signupForm = document.querySelector('#signin-form');
+        
+        signupForm.addEventListener('submit', validateForm);
+    
+        function validateForm(event) {
+          event.preventDefault();
+    
+          // Check email
+          const email = emailInput.value;
+          const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailPattern.test(email)) {
+            alert('Please enter a valid email address');
+            return;
+          }
+    
+          // Check password
+          const password = passwordInput.value;
+          if (password.length < 8) {
+            alert('Wrong password');
+            return;
+          }
+    
+          // If email and password are valid, submit the form
+          signupForm.submit();
+        }
+      </script>
         
 </body>
 

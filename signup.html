@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+  <form action="index.html" id="signup-form">
+    <div class="home">
+      <a style="color: black" href="index.html">home</a>
+    </div>
+
+    <div class="first_label">
+      <label>New user? sign up now</label>
+      <br>
+      <br>
+      <label>Enter full name:</label>
+      <input class="name" type="text" name="signup_name" required>
+      <br>
+      <br>
+      <label>Gender:</label>
+      <label>Male</label>
+      <input type="radio" name="gender" value="Male" required>
+      <label>Female</label>
+      <input type="radio" name="gender" value="Female" required>
+      <br>
+      <br>
+      <label>Enter your email:</label>
+      <input type="email" name="signup_email" required>
+      <br>
+      <br>
+      <label>Enter password:</label>
+      <input class="password" type="password" name="signup_password" required>
+      <br>
+      <br>
+      <button type="submit">Sign Up</button>
+      <br>
+      <br>
+      <label>Already signed up? Sign in <a style="color: blue" href="login.html">here</a></label>
+    </div>
+  </form>
+
+  
+
+  <script>
+    const emailInput = document.querySelector('input[name="signup_email"]');
+    const passwordInput = document.querySelector('input[name="signup_password"]');
+    const signupForm = document.querySelector('#signup-form');
+    
+    signupForm.addEventListener('submit', validateForm);
+
+    function validateForm(event) {
+      event.preventDefault();
+
+      // Check email
+      const email = emailInput.value;
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address');
+        return;
+      }
+
+      // Check password
+      const password = passwordInput.value;
+      if (password.length < 8) {
+        alert('Password must be at least 8 characters long');
+        return;
+      }
+
+      // If email and password are valid, submit the form
+      signupForm.submit();
+    }
+  </script>
+</body>
+</html>
