@@ -3,7 +3,11 @@ body {
     font-family: sans-serif;
     margin-top: 80px;
     padding: 30px;
-    background-color: #15616d;
+    /* background-color: #15616d; */
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center; 
+
 }
 
 main {
@@ -37,4 +41,9 @@ header li {
 header li a {
     color: black;
     text-decoration: none;
+}
+
+.title{
+    text-align: center;
+
 }
