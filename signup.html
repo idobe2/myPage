@@ -47,13 +47,6 @@
 
   <script>
     const emailInput = document.querySelector('input[name="signup_email"]');
-    const passwordInput = document.querySelector('input[name="signup_password"]');
-    const signupForm = document.querySelector('#signup-form');
-    
-    signupForm.addEventListener('submit', validateForm);
-
-    function validateForm(event) {
-      event.preventDefault();
 
       // Check email
       const email = emailInput.value;
