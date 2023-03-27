@@ -44,7 +44,7 @@
     padding: 40px;
     width: 300px;
     height: 400px;
-    background: url('https://goo.gl/YbktSj');
+    /*background: url('https://goo.gl/YbktSj');*/
     background-size: cover;
     background-position: center;
     border-radius: 0 2px 2px 0;
@@ -54,7 +54,7 @@
     display: block;
     margin-bottom: 40px;
     font-size: 28px;
-    color: #FFF;
+    color: #000000;
     text-align: center;
   }
   
@@ -125,13 +125,20 @@
   
   
   body{
-    margin: 0;
-    padding: 0;
-    background: #DDD;
-    font-size: 16px;
-    color: #222;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 300;
+    /*margin: 0;*/
+    /*padding: 0;*/
+    /*background: #DDD;*/
+    /*font-size: 16px;*/
+    /*color: #222;*/
+    /*font-family: 'Roboto', sans-serif;*/
+    /*font-weight: 300;*/
+
+
+    height: 125vh;
+    font-family: sans-serif;
+    margin-top: 80px;
+    padding: 30px;
+    background-color: #15616d;
   
   }
   
@@ -171,3 +178,43 @@
     background-position: center;
     border-radius: 0 2px 2px 0;
   }
+
+
+header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 25px 0 black;
+}
+
+header * {
+  display: inline;
+}
+
+header li {
+  margin: 20px;
+}
+
+header li a {
+  color: black;
+  text-decoration: none;
+}
+
+.or {
+  position: absolute;
+  top: 180px;
+  left: 280px;
+  width: 40px;
+  height: 40px;
+  background: #DDD;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 40px;
+  text-align: center;
+
+}
