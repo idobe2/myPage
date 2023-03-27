@@ -52,7 +52,7 @@ h1 {
   display: block;
   margin-bottom: 40px;
   font-size: 28px;
-  color: #16a085;
+  color: #eaeff3;
   text-align: center;
 }
 
@@ -96,7 +96,7 @@ input[type="submit"] {
   margin-top: 10px;
   width: 120px;
   height: 32px;
-  background: #16a085;
+  background: #1672a0;
   border: none;
   border-radius: 2px;
   color: #FFF;
