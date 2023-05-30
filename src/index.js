@@ -44,6 +44,14 @@ app.get('/signup.css', (req, res) => {
     res.sendFile(path.resolve('signup.css'));
 });
 
+app.get('/myPage.html', (req, res) => {
+    res.sendFile(path.resolve('myPage.html'));
+});
+
+app.get('/myPage.css', (req, res) => {
+    res.sendFile(path.resolve('myPage.css'));
+});
+
 app.listen(port, () => {
     console.log(`Server is running at ${port}`);
 });
