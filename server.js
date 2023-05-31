@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/myPage.css', (req, res) => {
-    res.sendFile(path.resolve('myPage.css'));
-});
+    res.sendFile(path.resolve(__dirname, 'myPage.css'));
+  });
 
 module.exports = app;

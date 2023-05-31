@@ -36,12 +36,22 @@ app.post('/submit-form', async (req, res) => {
     try {
         await student.save(); // Save the student instance
         console.log('Grades saved successfully');
-        res.sendStatus(200);
+        res.redirect('/'); // Redirect back to the myPage.html
     } catch (err) {
         console.error('Error saving grades to database:', err);
         res.sendStatus(500);
     }
 });
+
+app.get('/get-grades', async (req, res) => {
+    try {
+      const grades = await Grades.find({}, { _id: 0, __v: 0 }).exec();
+      res.json(grades);
+    } catch (err) {
+      console.error('Error retrieving grades:', err);
+      res.sendStatus(500);
+    }
+  });
 
 const port = process.env.PORT || 3000;
 

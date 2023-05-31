@@ -25,7 +25,69 @@
       <input type="number" id="grade3" name="grade3" required min="0" max="100">
 
       <input type="submit" value="Submit">
+</form>
+<button id="showGradesBtn">Show Grades</button>
+
+<div id="gradesPopup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <table id="gradesTable">
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Grade 1</th>
+          <th>Grade 2</th>
+          <th>Grade 3</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
     </form>
   </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const showGradesBtn = document.getElementById('showGradesBtn');
+    const gradesPopup = document.getElementById('gradesPopup');
+    const closeBtn = gradesPopup.querySelector('.close');
+    const gradesTableBody = document.querySelector('#gradesTable tbody');
+
+    showGradesBtn.addEventListener('click', function () {
+      fetch('/get-grades')
+        .then((response) => response.json())
+        .then((grades) => {
+          gradesTableBody.innerHTML = '';
+
+          grades.forEach((grade) => {
+            const row = document.createElement('tr');
+            const fullNameCell = document.createElement('td');
+            fullNameCell.textContent = grade.fullName;
+            const grade1Cell = document.createElement('td');
+            grade1Cell.textContent = grade.grade1;
+            const grade2Cell = document.createElement('td');
+            grade2Cell.textContent = grade.grade2;
+            const grade3Cell = document.createElement('td');
+            grade3Cell.textContent = grade.grade3;
+
+            row.appendChild(fullNameCell);
+            row.appendChild(grade1Cell);
+            row.appendChild(grade2Cell);
+            row.appendChild(grade3Cell);
+            gradesTableBody.appendChild(row);
+          });
+
+          gradesPopup.style.display = 'block';
+        })
+        .catch((error) => {
+          console.error('Error fetching grades:', error);
+        });
+    });
+
+    closeBtn.addEventListener('click', function () {
+      gradesPopup.style.display = 'none';
+    });
+  });
+</script>
 </body>
 </html>
