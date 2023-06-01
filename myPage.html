@@ -44,49 +44,48 @@
     </table>
   </div>
 </div>
-    </form>
   </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const showGradesBtn = document.getElementById('showGradesBtn');
-    const gradesPopup = document.getElementById('gradesPopup');
-    const closeBtn = gradesPopup.querySelector('.close');
-    const gradesTableBody = document.querySelector('#gradesTable tbody');
+  document.addEventListener('DOMContentLoaded', () => {
+      const showGradesBtn = document.getElementById('showGradesBtn');
+      const gradesPopup = document.getElementById('gradesPopup');
+      const closeBtn = gradesPopup.querySelector('.close');
+      const gradesTableBody = document.querySelector('#gradesTable tbody');
 
-    showGradesBtn.addEventListener('click', function () {
-      fetch('/get-grades')
-        .then((response) => response.json())
-        .then((grades) => {
-          gradesTableBody.innerHTML = '';
+      showGradesBtn.addEventListener('click', () => {
+          fetch('/get-grades')
+              .then((response) => response.json())
+              .then((grades) => {
+                  gradesTableBody.innerHTML = '';
 
-          grades.forEach((grade) => {
-            const row = document.createElement('tr');
-            const fullNameCell = document.createElement('td');
-            fullNameCell.textContent = grade.fullName;
-            const grade1Cell = document.createElement('td');
-            grade1Cell.textContent = grade.grade1;
-            const grade2Cell = document.createElement('td');
-            grade2Cell.textContent = grade.grade2;
-            const grade3Cell = document.createElement('td');
-            grade3Cell.textContent = grade.grade3;
+                  grades.forEach((grade) => {
+                      const row = document.createElement('tr');
+                      const fullNameCell = document.createElement('td');
+                      fullNameCell.textContent = grade.fullName;
+                      const grade1Cell = document.createElement('td');
+                      grade1Cell.textContent = grade.grade1;
+                      const grade2Cell = document.createElement('td');
+                      grade2Cell.textContent = grade.grade2;
+                      const grade3Cell = document.createElement('td');
+                      grade3Cell.textContent = grade.grade3;
 
-            row.appendChild(fullNameCell);
-            row.appendChild(grade1Cell);
-            row.appendChild(grade2Cell);
-            row.appendChild(grade3Cell);
-            gradesTableBody.appendChild(row);
-          });
+                      row.appendChild(fullNameCell);
+                      row.appendChild(grade1Cell);
+                      row.appendChild(grade2Cell);
+                      row.appendChild(grade3Cell);
+                      gradesTableBody.appendChild(row);
+                  });
 
-          gradesPopup.style.display = 'block';
-        })
-        .catch((error) => {
-          console.error('Error fetching grades:', error);
-        });
-    });
+                  gradesPopup.style.display = 'block';
+              })
+              .catch((error) => {
+                  console.error('Error fetching grades:', error);
+              });
+      });
 
-    closeBtn.addEventListener('click', function () {
-      gradesPopup.style.display = 'none';
-    });
+      closeBtn.addEventListener('click', () => {
+          gradesPopup.style.display = 'none';
+      });
   });
 </script>
 </body>

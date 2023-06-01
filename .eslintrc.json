@@ -16,5 +16,12 @@
     },
     "plugins": [
         "html"
+    ],
+    "ignorePatterns": [
+        "**/*.md",
+        "**/*.css",
+        "**/*.json",
+        "**/*.jpg",
+        "**/*.png"
     ]
 }

@@ -1,6 +1,6 @@
-/* eslint-disable */
-const app = require('./server');
 const mongoose = require('mongoose');
+const app = require('./server');
+
 const uri = 'mongodb+srv://mongo:eMyPCnryQVvGKtit@cluster0.oqnshnt.mongodb.net/Grades?retryWrites=true&w=majority';
 
 async function connect() {
@@ -24,7 +24,9 @@ const gradeSchema = new mongoose.Schema({
 const Grades = mongoose.model('Students', gradeSchema); // Use 'Students' as the model name
 
 app.post('/submit-form', async (req, res) => {
-    const { fullName, grade1, grade2, grade3 } = req.body;
+    const {
+        fullName, grade1, grade2, grade3,
+    } = req.body;
 
     const student = new Grades({
         fullName,
@@ -45,13 +47,13 @@ app.post('/submit-form', async (req, res) => {
 
 app.get('/get-grades', async (req, res) => {
     try {
-      const grades = await Grades.find({}, { _id: 0, __v: 0 }).exec();
-      res.json(grades);
+        const grades = await Grades.find({}, { _id: 0, __v: 0 }).exec();
+        res.json(grades);
     } catch (err) {
-      console.error('Error retrieving grades:', err);
-      res.sendStatus(500);
+        console.error('Error retrieving grades:', err);
+        res.sendStatus(500);
     }
-  });
+});
 
 const port = process.env.PORT || 3000;
 
