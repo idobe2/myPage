@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "Welcome to my HTML page!",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint * --color",
     "start": "node index.js",
-    "test": "jest -- detectOpenHandles /tests"
+    "test": "jest --maxWorkers=50%"
   },
   "repository": {
     "type": "git",
