@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Welcome to my HTML page!",
   "main": "index.js",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "nodemon index.js",
     "lint": "eslint * --color",
