@@ -8,7 +8,7 @@
     "dev": "nodemon index.js",
     "lint": "eslint . --color --ignore-pattern 'node_modules/'",
     "start": "node index.js",
-    "test": "jest -- detectOpenHandles /tests"
+    "test": "jest  /tests && mocha test/*.spec.js --color"
   },
   "repository": {
     "type": "git",
@@ -32,10 +32,13 @@
     "mongoose": "^7.2.2"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
+    "chai-http": "^4.3.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.27.5",
     "jest": "^27.0.0",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.21",
     "supertest": "^6.3.3"
   }
