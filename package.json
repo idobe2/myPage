@@ -6,7 +6,7 @@
   "type": "commonjs",
   "scripts": {
     "dev": "nodemon index.js",
-    "lint": "eslint . --color --ignore-pattern 'node_modules/'",
+    "lint": "eslint * --color",
     "start": "node index.js",
     "test": "jest -- detectOpenHandles /tests"
   },
