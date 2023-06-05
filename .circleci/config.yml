@@ -8,7 +8,7 @@ orbs:
 
 jobs:
   cicd-job:
-    executor: docker-image
+    executor:
       name: node/default
     steps:
       - checkout
