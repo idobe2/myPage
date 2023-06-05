@@ -1,6 +1,7 @@
-/* eslint-disable */
 const request = require('supertest')
-const app = require('../server');
+const app = require('../index');
+
+
 
 describe("Test suite 1:", ()=>{
     test("test 1:", async () => {
@@ -11,4 +12,22 @@ describe("Test suite 1:", ()=>{
         const res = await request(app).get('/1234')
         expect(res.statusCode).toEqual(404)
     })
+    test("test 3:", async () => {
+        const res = await request(app)
+            .post('/submit-form')
+            .send({
+                fullName: 'Test',
+                grade1: 90,
+                grade2: 85,
+                grade3: 95,
+            })
+        expect(res.statusCode).toEqual(302)
+    })
+    test("test 4:", async () => {
+        const response = await request(app).get('/get-grades')
+
+        expect(response.statusCode).toBe(200)
+        expect(Array.isArray(response.body)).toBe(true)
+    })
 })
+
